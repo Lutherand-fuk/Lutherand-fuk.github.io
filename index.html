@@ -1,664 +1,742 @@
 <!DOCTYPE html>
+
+
 <html lang="zh-CN">
-  <head>
-  <meta charset="UTF-8">
-  <meta 
-    name="viewport"
-    content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-  <meta 
-    http-equiv="X-UA-Compatible" 
-    content="ie=edge">
-  <meta 
-    name="theme-color" 
-    content="#fff" 
-    id="theme-color">
-  <meta 
-    name="description" 
-    content="娱乐活动">
-  <link 
-    rel="icon" 
-    href="https://demo.theme-kaze.top/img/Kaze.png">
-  <title>社区活动</title>
   
-    
-      <meta 
-        property="og:title" 
-        content="社区活动">
-    
-    
-      <meta 
-        property="og:url" 
-        content="https://lutherand-fuk.github.io/index.html">
-    
-    
-      <meta 
-        property="og:img" 
-        content="https://demo.theme-kaze.top/img/Kaze.png">
-    
-    
-    
-  
-  <script>
-    function loadScript(url, cb) {
-      var script = document.createElement('script');
-      script.src = url;
-      if (cb) script.onload = cb;
-      script.async = true;
-      document.body.appendChild(script);
-    }
-    function loadCSS(href, data, attr) {
-      var sheet = document.createElement('link');
-      sheet.ref = 'stylesheet';
-      sheet.href = href;
-      sheet.dataset[data] = attr;
-      document.head.appendChild(sheet);
-    }
-    function changeCSS(cssFile, data, attr) {
-      var oldlink = document.querySelector(data);
-      var newlink = document.createElement("link");
-      newlink.setAttribute("rel", "stylesheet");
-      newlink.setAttribute("href", cssFile);
-      newlink.dataset.prism = attr;
-      document.head.replaceChild(newlink, oldlink);
-    }
-  </script>
-  
-    
-  
-  <script>
-    // control reverse button
-    var reverseDarkList = {
-      dark: 'light',
-      light: 'dark'
-    };
-    var themeColor = {
-      dark: '#1c1c1e',
-      light: '#fff'
-    }
-    // get the data of css prefers-color-scheme
-    var getCssMediaQuery = function() {
-      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-    };
-    // reverse current darkmode setting function
-    var reverseDarkModeSetting = function() {
-      var setting = localStorage.getItem('user-color-scheme');
-      if(reverseDarkList[setting]) {
-        setting = reverseDarkList[setting];
-      } else if(setting === null) {
-        setting = reverseDarkList[getCssMediaQuery()];
-      } else {
-        return;
-      }
-      localStorage.setItem('user-color-scheme', setting);
-      return setting;
-    };
-    // apply current darkmode setting
-  </script>
-  
-    <script>
-      var setDarkmode = function(mode) {
-      var setting = mode || localStorage.getItem('user-color-scheme');
-      if(setting === getCssMediaQuery()) {
-        document.documentElement.removeAttribute('data-user-color-scheme');
-        localStorage.removeItem('user-color-scheme');
-        document.getElementById('theme-color').content = themeColor[setting];
-        document.getElementById('theme-color').dataset.mode = setting;
-      } else if(reverseDarkList[setting]) {
-        document.documentElement.setAttribute('data-user-color-scheme', setting);
-        document.getElementById('theme-color').content = themeColor[setting];
-        document.getElementById('theme-color').dataset.mode = setting;
-      } else {
-        document.documentElement.removeAttribute('data-user-color-scheme');
-        localStorage.removeItem('user-color-scheme');
-        document.getElementById('theme-color').content = themeColor[getCssMediaQuery()];
-        document.getElementById('theme-color').dataset.mode = getCssMediaQuery();
-      }
-    };
-    setDarkmode();
-    </script>
-  
-  
-  <link rel="preload" href="//at.alicdn.com/t/font_1946621_i1kgafibvw.css" as="style" >
-  <link rel="preload" href="//at.alicdn.com/t/font_1952792_89b4ac4k4up.css" as="style" >
-  
-  
-    <link rel="preload" href="/js/lib/lightbox/baguetteBox.min.js" as="script">
-    <link rel="preload" href="/js/lib/lightbox/baguetteBox.min.css" as="style" >
-  
-  
-    <link rel="preload" href="/js/lib/lozad.min.js" as="script">
-  
-  
-  
-  
-  
-  
-  
-  <link rel="stylesheet" href="/css/main.css">
-  
-  <link rel="stylesheet" href="//at.alicdn.com/t/font_1946621_i1kgafibvw.css">
-  
-  <link rel="stylesheet" href="//at.alicdn.com/t/font_1952792_89b4ac4k4up.css">
-  
-<meta name="generator" content="Hexo 6.0.0"></head>
 
-  <body>
-    <div class="wrapper">
+    <head>
+      <meta charset="utf-8" />
+        
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1"
+      />
+      <title> 娱乐活动</title>
+  <meta name="generator" content="hexo-theme-ayer">
+      
+      <link rel="shortcut icon" href="/favicon.ico" />
        
-      <nav class="navbar">
-  <div class="navbar-logo">
-    <span class="navbar-logo-main">
-      
-        <img 
-          class="navbar-logo-img"
-          width="32"
-          height="32"
-          src="https://demo.theme-kaze.top/img/Kaze.png" 
-          alt="blog logo">
-      
-      <span class="navbar-logo-dsc">社区活动</span>
-    </span>
-  </div>
-  <div class="navbar-menu">
-    
-      <a 
-        href="/" 
-        class="navbar-menu-item">
-        
-          首页
-        
-      </a>
-    
-      <a 
-        href="/archives" 
-        class="navbar-menu-item">
-        
-          归档
-        
-      </a>
-    
-      <a 
-        href="/tags" 
-        class="navbar-menu-item">
-        
-          标签
-        
-      </a>
-    
-      <a 
-        href="/categories" 
-        class="navbar-menu-item">
-        
-          分类
-        
-      </a>
-    
-      <a 
-        href="/about" 
-        class="navbar-menu-item">
-        
-          关于
-        
-      </a>
-    
-      <a 
-        href="/links" 
-        class="navbar-menu-item">
-        
-          友链
-        
-      </a>
-    
-    <a 
-      class="navbar-menu-item darknavbar" 
-      id="dark">
-      <i class="iconfont icon-weather"></i>
-    </a>
-    <a 
-      class="navbar-menu-item searchnavbar" 
-      id="search">
-      <i 
-        class="iconfont icon-search" 
-        style="font-size: 1.2rem; font-weight: 400;">
-      </i>
-    </a>
-  </div>
-</nav> 
-      
-      <div 
-        id="local-search" 
-        style="display: none">
-        <input
-          class="navbar-menu-item"
-          id="search-input"
-          placeholder="请输入搜索内容..." />
-        <div id="search-content"></div>
-      </div>
-      
-      <div class="section-wrap">
-        <div class="container">
-          <div class="columns">
-            <main class="main-column">
-  <div class="card">
-    
-    <article class="card card-content">
-      <a href="/2022/03/07/%E8%80%81%E5%B9%B4%E4%BA%BA%E9%98%B2%E6%BB%91%E6%8B%96%E9%9E%8B/">
-        <h1 class="post-title">
-          社区老人娱乐活动有几种
-        </h1>
-      </a>
-      <div class="card-excerpt">
-        
-          老年人想要延缓衰老,平时应多参加一些娱乐活动,保持一颗年轻的心,也可预防各种老人疾病,修养身心,养生保健。下面就为大家介绍六种适合老年人的娱乐活动。1、音乐
-一曲节奏明快、悦耳动听的乐曲,会拂去你心中的不快...
-        
-      </div>
-      <div class="card-post-footer">
-        <div class="post-meta">
-          <time datetime="2022-03-07T12:52:48.000Z">
-            <i 
-              class="iconfont icon-calendar" 
-              style="margin-right: 2px;">
-            </i>
-            <span>2022-03-07</span>
-          </time>
-          
-            
-            
-              
-            
-            <span class="dot"></span>
-            
-              
-              <a 
-                href="/categorie/%E7%A4%BE%E5%8C%BA%E6%B4%BB%E5%8A%A8/" 
-                class="post-meta-link">
-                社区活动
-              </a>
-            
-          
-        </div>
-        <a href="/2022/03/07/%E8%80%81%E5%B9%B4%E4%BA%BA%E9%98%B2%E6%BB%91%E6%8B%96%E9%9E%8B/">继续阅读 </a>
-      </div>
-    </article>
-  </div>
+<link rel="stylesheet" href="/dist/main.css">
 
-  <div class="card">
-    
-    <article class="card card-content">
-      <a href="/2020/01/01/%E5%81%A5%E5%85%A8%E5%85%BB%E8%80%81%E6%9C%8D%E5%8A%A1%E4%BD%93%E7%B3%BB%EF%BC%8C%E6%9C%89%E5%8A%9B%E6%9C%89%E6%95%88%E4%BF%9D%E9%9A%9C%E6%B0%91%E7%94%9F/">
-        <h1 class="post-title">
-          社区老人娱乐活动策划时需注意
-        </h1>
-      </a>
-      <div class="card-excerpt">
-        
-          社区老人娱乐活动策划时需注意
-        
-      </div>
-      <div class="card-post-footer">
-        <div class="post-meta">
-          <time datetime="2019-12-31T16:00:00.000Z">
-            <i 
-              class="iconfont icon-calendar" 
-              style="margin-right: 2px;">
-            </i>
-            <span>2020-01-01</span>
-          </time>
-          
-            
-            
-              
-            
-            <span class="dot"></span>
-            
-              
-              <a 
-                href="/categorie/%E5%AE%89%E5%85%A8/" 
-                class="post-meta-link">
-                安全
-              </a>
-            
-          
-        </div>
-        <a href="/2020/01/01/%E5%81%A5%E5%85%A8%E5%85%BB%E8%80%81%E6%9C%8D%E5%8A%A1%E4%BD%93%E7%B3%BB%EF%BC%8C%E6%9C%89%E5%8A%9B%E6%9C%89%E6%95%88%E4%BF%9D%E9%9A%9C%E6%B0%91%E7%94%9F/">继续阅读 </a>
-      </div>
-    </article>
-  </div>
+      
+<link rel="stylesheet" href="/css/fonts/remixicon.css">
 
-</main>
-            <aside class="left-column">
-              
-              <div class="card card-author">
-                
-  <img 
-    src="https://demo.theme-kaze.top/img/Kaze.png" 
-    class="author-img"
-    width="88"
-    height="88"
-    alt="author avatar">
+      
+<link rel="stylesheet" href="/css/custom.css">
+ 
+      <script src="https://cdn.staticfile.org/pace/1.2.4/pace.min.js"></script>
+       
+ 
 
-<p class="author-name">老有所助</p>
-<p class="author-description">designed by theme-kaze</p>
-<div class="author-message">
-  <a 
-    class="author-posts-count" 
-    href="/archives">
-    <span>2</span>
-    <span>文章</span>
-  </a>
-  <a 
-    class="author-categories-count" 
-    href="/categories">
-    <span>2</span>
-    <span>分类</span>
-  </a>
-  <a 
-    class="author-tags-count" 
-    href="/tags">
-    <span>2</span>
-    <span>标签</span>
-  </a>
-</div>
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-bulma@5.0.1/bulma.min.css"
+      />
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
 
-              </div>
-               <div class="sticky-tablet">
-  
-  
-  
-  <article class="card card-content categories-widget">
-    <div class="categories-card">
-  <div class="categories-header">
-    <i 
-      class="iconfont icon-fenlei" 
-      style="padding-right: 2px;">
-    </i>分类
-  </div>
-  <div class="categories-list">
-    
-      <a href="/categorie/%E5%AE%89%E5%85%A8/">
-        <div class="categories-list-item">
-          安全
-          <span class="categories-list-item-badge">1</span>
-        </div>
-      </a>
-    
-      <a href="/categorie/%E7%A4%BE%E5%8C%BA%E6%B4%BB%E5%8A%A8/">
-        <div class="categories-list-item">
-          社区活动
-          <span class="categories-list-item-badge">1</span>
-        </div>
-      </a>
-    
-  </div>
-</div>
-  </article>
-  
-  <article class="card card-content tags-widget">
-    <div class="tags-card">
-  <div class="tags-header">
-    <i 
-      class="iconfont icon-biaoqian" 
-      style="padding-right: 2px;">
-    </i>热门标签
-  </div>
-  <div class="tags-list">
-    
-      <a 
-        href="/tag/%E7%A4%BE%E5%8C%BA%E6%B4%BB%E5%8A%A8/" 
-        title="社区活动">
-        <div class="tags-list-item">社区活动</div>
-      </a>
-    
-      <a 
-        href="/tag/%E7%A4%BE%E5%8C%BA%E6%B4%BB%E5%8A%A8%E5%AE%89%E5%85%A8/" 
-        title="社区活动安全">
-        <div class="tags-list-item">社区活动安全</div>
-      </a>
-    
-  </div>
-</div>
-  </article>
-  
-  
-    <article class="card card-content widescreen-archive archive-widget">
-      <div class="archive-card">
-  <div class="archive-card-header">
-    <i 
-      class="iconfont icon-wodebaobiao" 
-      style="padding-right: 2px;">
-    </i>归档
-  </div>
-  <div class="archive-card-list">
-    
-    
-    
+      <!-- mermaid -->
       
-        
-        
-        
-      
-    
-      
-        
-          <a 
-            href="/archives/2022" 
-            class="archive-card-list-item">
-            2022
-            <span class="archive-card-list-item-badge">1</span>
-          </a>
-        
-        
-        
-      
-    
-    
-      <a 
-        href="/archives/2020" 
-        class="archive-card-list-item">
-        2020
-        <span class="archive-card-list-item-badge">1</span>
-      </a>
-    
-  </div>
-</div>
-    </article>
-  
-</div>
-            </aside>
-            <aside class="right-column">
-              <div class="sticky-widescreen">
-  
-  
-  
-  <article class="card card-content">
-    <div class="recent-posts-card">
-  <div class="recent-posts-header">
-    <i 
-      class="iconfont icon-wenzhang_huaban" 
-      style="padding-right: 2px;">
-    </i>最近文章
-  </div>
-  <div class="recent-posts-list">
-    
-      <div class="recent-posts-item">
-        <div class="recent-posts-item-title">2022-03-07</div>
-        <a href="/2022/03/07/%E8%80%81%E5%B9%B4%E4%BA%BA%E9%98%B2%E6%BB%91%E6%8B%96%E9%9E%8B/"><div class="recent-posts-item-content">社区老人娱乐活动有几种</div></a>
-      </div>
-    
-      <div class="recent-posts-item">
-        <div class="recent-posts-item-title">2020-01-01</div>
-        <a href="/2020/01/01/%E5%81%A5%E5%85%A8%E5%85%BB%E8%80%81%E6%9C%8D%E5%8A%A1%E4%BD%93%E7%B3%BB%EF%BC%8C%E6%9C%89%E5%8A%9B%E6%9C%89%E6%95%88%E4%BF%9D%E9%9A%9C%E6%B0%91%E7%94%9F/"><div class="recent-posts-item-content">社区老人娱乐活动策划时需注意</div></a>
-      </div>
-    
-  </div>
-</div>
-  </article>
-  
-  
-    <article class="card card-content">
-      <div class="archive-card">
-  <div class="archive-card-header">
-    <i 
-      class="iconfont icon-wodebaobiao" 
-      style="padding-right: 2px;">
-    </i>归档
-  </div>
-  <div class="archive-card-list">
-    
-    
-    
-      
-        
-        
-        
-      
-    
-      
-        
-          <a 
-            href="/archives/2022" 
-            class="archive-card-list-item">
-            2022
-            <span class="archive-card-list-item-badge">1</span>
-          </a>
-        
-        
-        
-      
-    
-    
-      <a 
-        href="/archives/2020" 
-        class="archive-card-list-item">
-        2020
-        <span class="archive-card-list-item-badge">1</span>
-      </a>
-    
-  </div>
-</div>
-    </article>
-  
-</div>
-            </aside>
-          </div>
-        </div>
-      </div>
-    </div>
-     
-    <footer class="footer">
-  <div class="footer-container">
-    <div>
-      <div class="footer-dsc">
-        <span>
-          Copyright ©
-          
-            2020 -
-          
-          2022
-        </span>
-        &nbsp;
-        <a 
-          href="/" 
-          class="footer-link">
-          社区活动
-        </a>
-      </div>
-    </div>
-
-    
-      <div class="footer-dsc">
-        
-          Powered by
-          <a 
-            href="https://hexo.io/" 
-            class="footer-link" 
-            target="_blank" 
-            rel="nofollow noopener noreferrer">
-            &nbsp;Hexo
-          </a>
-        
-        
-          <span>&nbsp;|&nbsp;</span>
-        
-        
-          Theme -
-          <a 
-            href="https://github.com/theme-kaze" 
-            class="footer-link" 
-            target="_blank"
-            rel="nofollow noopener noreferrer">
-            &nbsp;Kaze
-          </a>
-        
-      </div>
-    
-    
-    
-    
-</footer> 
-    
-  <a 
-    role="button" 
-    id="scrollbutton" 
-    class="basebutton" 
-    aria-label="回到顶部">
-    <i class="iconfont icon-arrowleft button-icon"></i>
-  </a>
-
-<a 
-  role="button" 
-  id="menubutton"
-  aria-label="menu button"
-  class="basebutton">
-  <i class="iconfont icon-menu button-icon"></i>
-</a>
-<a 
-  role="button" 
-  id="popbutton" 
-  class="basebutton" 
-  aria-label="控制中心">
-  <i class="iconfont icon-expand button-icon"></i>
-</a>
-<a 
-  role="button" 
-  id="darkbutton" 
-  class="basebutton darkwidget" 
-  aria-label="夜色模式">
-  <i class="iconfont icon-weather button-icon"></i>
-</a>
-<a 
-  role="button" 
-  id="searchbutton" 
-  class="basebutton searchwidget" 
-  aria-label="搜索">
-  <i class="iconfont icon-search button-icon"></i>
-</a> 
-     
-     
-     
-     
-    <script src="/js/main.js"></script> 
-     
-    
-      <script>
-        var addLazyload = function () {
-          var observer = lozad('.lozad', {
-            load: function (el) {
-              el.srcset = el.getAttribute('data-src')
-            },
-            loaded: function (el) {
-              el.classList.add('loaded')
-            },
-          })
-          observer.observe()
+      <style>
+        .swal2-styled.swal2-confirm {
+          font-size: 1.6rem;
         }
-      </script>
-      <script>
-        loadScript('/js/lib/lozad.min.js', addLazyload)
-      </script>
+      </style>
+    </head>
+  </html>
+</html>
+
+
+<body>
+  <div id="app">
+    
+      
+    <main class="content on">
+      
+<section class="cover">
+    
+      
+      <a class="forkMe" href="https://github.com/Shen-Yu/hexo-theme-ayer"
+        target="_blank"><img width="149" height="149" src="/images/forkme.png"
+          class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1"></a>
+    
+  <div class="cover-frame">
+    <div class="bg-box">
+      <img src="/images/cover1.jpg" alt="image frame" />
+    </div>
+    <div class="cover-inner text-center text-white">
+      <h1><a href="/">娱乐活动</a></h1>
+      <div id="subtitle-box">
+        
+        <span id="subtitle"></span>
+        
+      </div>
+      <div>
+        
+      </div>
+    </div>
+  </div>
+  <div class="cover-learn-more">
+    <a href="javascript:void(0)" class="anchor"><i class="ri-arrow-down-line"></i></a>
+  </div>
+</section>
+
+
+
+<script src="https://cdn.staticfile.org/typed.js/2.0.12/typed.min.js"></script>
+
+
+<!-- Subtitle -->
+
+  <script>
+    try {
+      var typed = new Typed("#subtitle", {
+        strings: ['老有所助', '老有所助', '老有所助'],
+        startDelay: 0,
+        typeSpeed: 200,
+        loop: true,
+        backSpeed: 100,
+        showCursor: true
+      });
+    } catch (err) {
+      console.log(err)
+    }
+  </script>
+  
+<div id="main">
+  <section class="outer">
+  
+  
+  
+
+<div class="notice" style="margin-top:50px">
+    <i class="ri-heart-fill"></i>
+    <div class="notice-content" id="broad"></div>
+</div>
+<script type="text/javascript">
+    fetch('https://v1.hitokoto.cn')
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById("broad").innerHTML = data.hitokoto;
+        })
+        .catch(console.error)
+</script>
+
+<style>
+    .notice {
+        padding: 20px;
+        border: 1px dashed #e6e6e6;
+        color: #969696;
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        background: #fbfbfb50;
+        border-radius: 10px;
+    }
+
+    .notice i {
+        float: left;
+        color: #999;
+        font-size: 16px;
+        padding-right: 10px;
+        vertical-align: middle;
+        margin-top: -2px;
+    }
+
+    .notice-content {
+        display: initial;
+        vertical-align: middle;
+    }
+</style>
+  
+  <article class="articles">
+    
+    
+    
+    
+    <article
+  id="post-老年人防滑拖鞋"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2022/03/07/%E8%80%81%E5%B9%B4%E4%BA%BA%E9%98%B2%E6%BB%91%E6%8B%96%E9%9E%8B/"
+    >打开思路广发言，我们邀您一起谈养老</a> 
+</h2>
+ 
+
+      
+    </header>
      
+    <div class="article-meta">
+      <a href="/2022/03/07/%E8%80%81%E5%B9%B4%E4%BA%BA%E9%98%B2%E6%BB%91%E6%8B%96%E9%9E%8B/" class="article-date">
+  <time datetime="2022-03-07T12:52:48.000Z" itemprop="datePublished">2022-03-07</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categorie/%E5%85%BB%E8%80%81%E6%8F%90%E8%AE%AE/">养老提议</a>
+  </div>
+   
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <p>近期密集出台的养老政策，引发公众持续关注。</p>
+<p>　　2月21日，国务院印发《“十四五”国家老龄事业发展和养老服务体系规划》，提出：尽快实现企业职工基本养老保险全国统筹、实施渐进式延迟法定退休年龄、大力发展企业年金、职业年金，提高企业年金覆盖率，促进和规范发展第三支柱养老保险，推动个人养老金发展等内容。</p>
+<p>　　同一天，中国银保监会下发《中国银保监会办公厅关于扩大专属商业养老保险试点范围的通知》，宣布自2022年3月1日起，专属商业养老保险试点区域扩大到全国范围。在原有6家试点公司基础上，允许养老保险公司参加专属商业养老保险试点。</p>
+<p>　　而在隔天的2月22日，人力资源与社会保障部举行了2021年第四季度新闻发布会。会上提及，为解决各省之间养老保险基金结构性矛盾日益突出等问题，今年1月已经开始实施养老保险全国统筹。</p>
+<p>　　……</p>
+<p>　　密集推出的养老政策说明了国家对养老的高度重视，相关政策的推进蹄疾步稳。看上去，与养老政策直接相关的只是老年人，但实际上，人口老龄化催生青年人的养老焦虑，年轻一代也开始关注养老问题。</p>
+<p>　　国际社会上，通常把60岁以上的人口占总人口比例达到10%，或65岁以上人口占总人口的比重达到7%，作为国家或地区进入老龄化社会的标准。</p>
+<p>　　而根据中国第七次人口普查结果，我国60岁及以上人口为26402万人，占18.70%（其中，65岁及以上人口为19064万人，占13.50%）。可见，我国已经进入老龄化社会阶段，并且与2010年相比，60岁及以上人口的比重上升5.44个百分点，表明我国的人口老龄化程度进一步加深。</p>
+<p>　　除了基数大、增长快，还有一个人口特征值得我们注意，那就是长寿。从刚刚建国时人均平均预期寿命的不到半百，到现在已经超过75岁了，中国人口平均预期寿命得到了大幅增长。实际上，这并非中国独有的现象，全世界的预期寿命都在逐步增长。</p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/%E6%8F%90%E8%AE%AE/" rel="tag">提议</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+    
+</article>
+
+    
+    <article
+  id="post-高端养老社区套间1"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2022/03/06/%E9%AB%98%E7%AB%AF%E5%85%BB%E8%80%81%E7%A4%BE%E5%8C%BA%E5%A5%97%E9%97%B41/"
+    >养老服务升级保障&#34;老有所安&#34;</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2022/03/06/%E9%AB%98%E7%AB%AF%E5%85%BB%E8%80%81%E7%A4%BE%E5%8C%BA%E5%A5%97%E9%97%B41/" class="article-date">
+  <time datetime="2022-03-06T15:07:52.000Z" itemprop="datePublished">2022-03-06</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categorie/%E7%A4%BE%E5%8C%BA%E5%85%BB%E8%80%81/">社区养老</a>
+  </div>
+   
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <font face = "黑体" color = black size = 3>
+# 瞭望丨养老服务升级保障“老有所安” #
+
+<p><strong>着力解决养老服务“最后一公里”问题，推动居家和社区养老服务进入高质量发展2.0版本</strong></p>
+<p>放宽入职条件，拓宽职业空间，缩短晋级时间，完善老年健康相关职业资格认证制度和以技术技能价值激励为导向的薪酬分配体系，拓宽养老护理人才的职业发展前景</p>
+<p>大力发展第三支柱养老保险，老年人可以选择加入商业保险计划，弥补基本养老保险不足，进而提高养老保障水平</p>
+<p>2月21日，国务院印发《“十四五”国家老龄事业发展和养老服务体系规划》(以下简称《规划》)，围绕推动老龄事业和产业协同发展、推动养老服务体系高质量发展，明确了“十四五”时期的总体要求、主要目标和工作任务。在积极应对人口老龄化中国方案中，养老服务的提质升级时期正在到来。</p>
+<p>多位专家表示，“老有所安”是应对人口老龄化的效果要求。在养老服务供给和质量等方面，《规划》提出了一系列实招硬招，有利于升级养老服务，满足老年人的养老需求，有利于“十四五”时期全社会积极应对人口老龄化的格局初步形成。</p>
+<p>养老服务高质量发展2.0版</p>
+<p>居家养老、社区养老是我国老年人希望的养老方式。为了顺应老年人居家就近养老期待需求，我国正在着力解决养老服务“最后一公里”问题，推动居家和社区养老服务进入高质量发展2.0版本。</p>
+<p>《2020年度国家老龄事业发展公报》显示，截至2020年底，我国养老服务床位数达到821万张。我国九成以上老年人倾向于居家养老，尽管养老服务供给总量不断增加，但居家社区养老和优质普惠服务供给仍然不能满足需求。</p>
+<p>为此，《规划》明确提出硬指标——到2025年，养老服务床位总量达到900万张以上，新建城区、新建居住区配套建设养老服务设施达标率达到100%。</p>
+<p>“老年人哪里多、我们就把养老服务机构办在哪。”民政部等部门表示，顺应老年人居家就近养老期待需求，“十四五”时期将推进老旧城区、已建成居住(小)区基本补齐社区养老服务设施，推动构建城市社区“一刻钟”居家养老服务圈，让居家社区养老服务更丰富、更便捷、更有质量。</p>
+<p>“十四五”时期，我国将进一步规范和推广家庭养老床位、老年餐桌、互助幸福院、嵌入式养老服务机构、巡访关爱、适老化改造等比较成熟的新型居家社区养老服务，探索养老顾问、时间银行、智慧养老等新型服务，惠及更多居家老年人。</p>
+<p>多位受访专家认为，“十四五”时期应积极推动社会、社区养老资源优化配置，将主要的财力、物力、人力配置到居家和社区养老服务上，鼓励各地将机构养老中的专业化服务引入社区，推进居家和社区养老服务提质升级。</p>
+<p>推动居家和社区养老服务进入高质量发展，必须深入推进医养结合，整合资源满足老年人的健康养老需求。</p>
+<p>中央对此已有部署。2021年召开的全国老龄工作会议要求，构建“预防、治疗、照护”三位一体的老年健康服务模式。《中共中央国务院关于加强新时代老龄工作的意见》(以下简称《意见》)对完善老年人健康支撑体系作出明确部署。</p>
+<p>实施社区医养结合能力提升行动，是下一步养老服务发展的一大亮点。“十四五”时期，我国将依托社区卫生服务中心、乡镇卫生院或养老服务机构、特困人员供养服务设施(敬老院)，利用现有资源改建一批社区(乡镇)医养结合服务设施，重点为失能、慢性病、高龄、残疾等老年人提供健康教育、预防保健、疾病诊治、康复护理、安宁疗护为主，兼顾日常生活照料的医养结合服务。</p>
+<p>推动医疗卫生、养老服务数据共享，完善医养结合信息管理系统，可以有效提升医养结合服务质量。本刊记者从国家发改委了解到，下一步我国将推进“互联网+医疗健康”“互联网+护理服务”“互联网+康复服务”，发展面向居家、社区和机构的智慧医养结合服务。</p>
+<p>吸纳培养更多护理人才</p>
+<p>数据显示，我国失能、半失能老年人约有4000万人，其中九成以上倾向于居家养老，这对居家和社区养老服务提出较大护理需求。</p>
+<p>护理人才和护理型床位，是关键资源。“十四五”规划纲要提出，加大养老护理型人才培养力度，扩大养老机构护理型床位供给，养老机构护理型床位占比提高到55%，更好满足高龄失能失智老年人护理服务需求。《规划》在增加养老机构护理型床位供给方面，还提出一系列支持措施。</p>
+<p>例如，支持1000个左右公办养老机构增加护理型床位;中央预算内投资重点支持新建护理型养老服务设施和照护服务能力改造提升项目;引导地方对普通型床位和护理型床位实行差异化补助;完善对护理型床位的认定办法，尽快建立长期照护服务的项目、标准、质量评价等规范。</p>
+<p>针对护理型床位占比指标，一些人口老龄化程度较高的地方，结合实际给出了更高的目标值。例如，《江苏省“十四五”养老服务发展规划》提出，到2025年，护理型床位数占养老机构床位总数的70%。</p>
+<p>回应老年人的护理需求，需要发展专业化的养老护理人才队伍。近年来，为了缓解养老护理人才短缺困境，国家有关部门相继出台相关政策。　　　　</p>
+<p>放宽入职条件，拓宽职业空间，缩短晋级时间，完善老年健康相关职业资格认证制度和以技术技能价值激励为导向的薪酬分配体系，都旨在拓宽养老护理人才的职业发展前景。</p>
+<p>近年来，各地加大政策支持力度，鼓励实行入职补贴、工龄补贴等政策解决养老护理员待遇不高、上升通道不畅、离职率高等问题。2020年北京出台《北京市养老服务人才培养培训实施办法》，扶持力度很大：对专职从事养老服务工作的，入职满一年后分三年发放奖励，标准为本科以上6万元，专科(高职)5万元，中职4万元，对一线工作的养老护理员，每人每月最高补贴1500元。</p>
+<p>受访专家表示，从长远来看，应鼓励更多院校开设老年康复护理专业，扩大招生规模，发展医养结合、生活照料一体化的养老护理。更加注重养老护理人才价值实现，完善养老护理技能等级认定和信用管理制度，借鉴发达国家经验，形成合理的薪酬体系。</p>
+<p>“专业照护人才短缺是构建养老照护体系的瓶颈。”全国老龄办党组成员、中国老龄协会副会长吴玉韶认为，要建立完善养老服务职业体系，除了开展养老护理员职业技术等级认定，还应该建立完善以长期护理保险制度为代表的照护保障制度，吸纳更多人从事养老服务工作。</p>
+<p>长期护理保险制度是破解失能老人护理难题的有效手段。2016年，人力资源和社会保障部在青岛、上海等15个城市开展长期护理保险试点。</p>
+<p>对此，《意见》明确提出，积极探索建立适合我国国情的长期护理保险制度。受访专家表示，从职工基本医疗保险参保人群起步，重点解决重度失能人员基本护理保障需求。同时，探索建立互助共济、责任共担的多渠道筹资机制，参加长期护理保险的职工筹资以单位和个人缴费为主，形成与经济社会发展和保障水平相适应的筹资动态调整机制。</p>
+<p>多位专家建议，扩大长期护理保险试点，更加注重完善多元筹资机制，均衡各方责任。到2025年，基本形成包括养老金、医疗保险基金、介护保险基金在内的长期照护综合保障体系，满足多样化、多层次的长期护理保障需求。</p>
+<p>做强多元化养老财富储备渠道</p>
+<p>面对愈发多元的养老需求，一些有条件的老年人可以通过加入商业保险计划的方式，弥补基本养老保险不足，进而提高养老保障水平。近年来，发展多层次、多支柱的养老保险体系，成为鲜明政策导向。</p>
+<p>2020年中央将“发展多层次、多支柱养老保险体系”写入“十四五”规划建议。2021年中央全面深化改革委员会第二十三次会议审议通过《关于推动个人养老金发展的意见》，会议强调，发展多层次、多支柱养老保险体系，是积极应对人口老龄化、实现养老保险制度可持续发展的重要举措。</p>
+<p>作为第三支柱，个人养老金是筑牢养老保险“多支柱”的关键。规划提出，促进和规范发展第三支柱养老保险。支持商业保险机构开发商业养老保险和适合老年人的健康保险，引导全社会树立全生命周期的保险理念。</p>
+<p>一系列政策部署，正在不断落地生效。</p>
+<p>2月21日，银保监会办公厅发布《关于扩大专属商业养老保险试点范围的通知》，明确自2022年3月1日起，专属商业养老保险试点区域扩大到全国范围。在原有6家试点公司基础上，允许养老保险公司参加专属商业养老保险试点。</p>
+<p>多位专家认为，要把做大做强养老保险第三支柱作为养老保障体系建设的重点，使更多群体不受就业形式、就业单位等限制积累长期养老金。同时，探索建立全国统一的第三支柱养老账户管理体系，对商业养老年金产品实行税延、税免、直接补贴等政策支持，激励更多机构和个人参与。</p>
+<p>创新养老金融工具，可以为老年群体提供多元化的养老财富储备渠道，是助力第三支柱养老保险的重要手段。</p>
+<p>专家建议，在实施包容审慎监管的前提下，形成银行、证券、保险、基金等共同建设养老金第三支柱的合力。尽快推出国家第三支柱个人养老金发展行动方案，明确界定和规范第三支柱养老保险产品的范围，形成全国统一养老的金融标准，将银行储蓄、理财、基金、信托等资管产品纳入第三支柱可投资品种范围。</p>
+<p>中国养老金融50人论坛秘书长董克用认为，人口老龄化背景下，要认清养老产业金融的本质属性，明确养老产业金融的目标不是经济增长，而应当是帮助老人安享晚年、协助家庭排忧解难和促进社会和谐发展。</p>
+<blockquote>
+<p>手机阅读本文请扫码<br></p>
+</blockquote>
+<p><img src="/2022/03/06/%E9%AB%98%E7%AB%AF%E5%85%BB%E8%80%81%E7%A4%BE%E5%8C%BA%E5%A5%97%E9%97%B41/%E4%B8%8B%E8%BD%BD.png"></p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/%E5%85%BB%E8%80%81%E7%8E%AF%E5%A2%83/" rel="tag">养老环境</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+    
+</article>
+
+    
+    <article
+  id="post-健全养老服务体系，有力有效保障民生"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2020/01/01/%E5%81%A5%E5%85%A8%E5%85%BB%E8%80%81%E6%9C%8D%E5%8A%A1%E4%BD%93%E7%B3%BB%EF%BC%8C%E6%9C%89%E5%8A%9B%E6%9C%89%E6%95%88%E4%BF%9D%E9%9A%9C%E6%B0%91%E7%94%9F/"
+    >健全养老服务体系，有力有效保障民生——2022政府工作报告</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2020/01/01/%E5%81%A5%E5%85%A8%E5%85%BB%E8%80%81%E6%9C%8D%E5%8A%A1%E4%BD%93%E7%B3%BB%EF%BC%8C%E6%9C%89%E5%8A%9B%E6%9C%89%E6%95%88%E4%BF%9D%E9%9A%9C%E6%B0%91%E7%94%9F/" class="article-date">
+  <time datetime="2019-12-31T16:00:00.000Z" itemprop="datePublished">2020-01-01</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categorie/%E6%96%B0%E5%8D%8E%E5%85%BB%E8%80%81/">新华养老</a>
+  </div>
+   
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="健全养老服务体系（有力有效保障民生）"><a href="#健全养老服务体系（有力有效保障民生）" class="headerlink" title="健全养老服务体系（有力有效保障民生）"></a>健全养老服务体系（有力有效保障民生）</h1><hr>
+<p><strong>安享幸福美满的晚年生活，是每位老年人的期盼，也是每个家庭的关切。</strong></p>
+<p>　　习近平总书记强调，“有效应对人口老龄化，不仅能提高老年人生活和生命质量、维护老年人尊严和权利，而且能促进经济发展、增进社会和谐。”“要完善养老和医疗保险制度，落实支持养老服务业发展、促进医疗卫生和养老服务融合发展的政策措施。”</p>
+<p>　　代表委员表示，有效应对人口老龄化，事关国家发展全局，事关亿万百姓福祉，事关社会和谐稳定，对于全面建设社会主义现代化国家具有重要意义。在党和国家重大规划和政策意见引领下，我国老龄事业发展和养老服务体系建设取得一系列新成就。接下来，各地各部门应加快完善“社会保障、养老服务、健康支撑”三大体系，着力构建老年友好型社会，助力老年人安享幸福晚年。</p>
+<h3 id="优化城乡养老服务供给"><a href="#优化城乡养老服务供给" class="headerlink" title="优化城乡养老服务供给"></a>优化城乡养老服务供给</h3><p>　政府工作报告提出，积极应对人口老龄化，优化城乡养老服务供给，支持社会力量提供日间照料、助餐助洁、康复护理等服务，鼓励发展农村互助式养老服务，推动老龄事业和产业高质量发展。</p>
+<p>　　积极应对人口老龄化，应进一步规范发展机构养老。</p>
+<p>　　国家统计局数据显示，截至2021年底，全国共有养老机构4万个，养老服务床位达813.5万张。“各地要通过直接建设、委托运营、购买服务、鼓励社会投资等多种方式发展机构养老。”洛阳理工学院副校长马珺委员认为，应力争到2025年全国养老服务床位总量达到900万张以上。</p>
+<p>　　马珺委员建议，创新居家社区养老服务模式。“目前，我国大部分老年人选择居家养老，社区是开展居家养老的载体和基础。”马珺委员说，各地可积极调动社会组织、社会工作者、社区志愿者等社会力量，参与提供日间照料、助餐助洁、康复护理等服务，构建多方参与的居家养老服务格局。</p>
+<p>　　健全养老服务体系，完善多层次养老保障体系至关重要。</p>
+<p>　　今年1月，企业职工基本养老保险全国统筹启动实施。“实施企业职工基本养老保险全国统筹有利于确保养老金按时足额发放。”河南省人民医院老年医学科主任黄改荣委员说，由于我国区域之间发展不平衡，经济发展水平、人口年龄结构等存在差异，各省份之间养老保险基金结构性矛盾日益突出，一些人口老龄化程度较高的省份，养老保险基金的支出压力较大。全国统筹制度实施后，将从制度上解决基金的结构性矛盾。</p>
+<p>　　实现老有所医是让老年人共享改革发展成果、安享幸福晚年的重要举措。河北沧州市中心医院党委书记温秀玲代表表示，应进一步提高老年人健康服务和管理水平。提高失能、重病、高龄、低收入等老年人家庭医生签约服务覆盖率，同时，扩大医联体提供家庭病床、上门巡诊等居家医疗服务的范围，明确可按规定报销相关医疗费用，并按成本收取上门服务费。</p>
+<h3 id="强化老龄工作保障"><a href="#强化老龄工作保障" class="headerlink" title="强化老龄工作保障"></a>强化老龄工作保障</h3><p>　　代表委员认为，强化老龄工作保障，才能更好推动老龄事业和产业高质量发展，进一步满足老年人的高质量养老需求。各地区各部门要在人才队伍建设、资金保障等方面持续发力。</p>
+<p>　　做好老龄工作，应加强人才队伍建设。“与老年人的多样化养老需求相比，当前专业养老人才特别是护理人员还存在短缺现象。”温秀玲代表建议，加快建设适应新时代老龄工作需要的专业技术、社会服务、经营管理、科学研究人才和志愿者队伍。用人单位要切实保障养老服务人员工资待遇，建立科学合理的工资分配机制，提升养老服务岗位吸引力。</p>
+<p>　　福建莆田市秀屿区笏石镇岐厝村党支部书记、村委会主任曾云英代表表示，目前农村地区虽然建立了特困人员集中供养制度，但还存在养老人才缺乏、服务水平不高等问题。建议适当提高养老服务人员的待遇水平，开展养老服务、护理人员培养培训行动，提升养老服务水平。</p>
+<p>　　“健全养老服务体系离不开资金支持。”山西文旅集团党委书记、董事长王文保代表建议，应完善老龄事业发展财政投入政策和多渠道筹资机制，继续加大中央预算内投资支持力度，进一步提高福利彩票公益金用于养老服务的比例；在地方层面，各地要统筹老龄事业发展，加大财政投入力度。</p>
+<p>（本报记者申少铁、齐志明、常钦、罗珊珊、葛孟超、李晓晴、姜晓丹）</p>
+<p><em>由“老有所助”转自《 人民日报 》（ 2022年03月08日 06 版）</em></p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/%E5%85%BB%E8%80%81%E4%BD%93%E7%B3%BB/" rel="tag">养老体系</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+    
+</article>
+
+    
+  </article>
+  
+
+  
+</section>
+</div>
+
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2015-2022
+        <i class="ri-heart-fill heart_icon"></i> 出来看神仙
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>访问人数:<span id="busuanzi_value_site_uv"></span></span>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>浏览次数:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
+        
+      </li>
+    </ul>
+  </div>
+</footer>    
+    </main>
+    <div class="float_btns">
+      <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+    </div>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="娱乐活动"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags">标签</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags/%E6%97%85%E8%A1%8C/">旅行</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" target="_blank" rel="noopener" href="http://shenyu-vip.lofter.com">摄影</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/friends">友链</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/2019/about">关于我</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="搜索">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
     
     
-  </body>
+    <div class="reward-item">
+      <img class="reward-img" src="/images/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-3.6.0.min.js"></script>
+ 
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+
+<script src="https://cdn.staticfile.org/jquery-modal/0.9.2/jquery.modal.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.staticfile.org/jquery-modal/0.9.2/jquery.modal.min.css"
+/>
+<script src="https://cdn.staticfile.org/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+ <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.staticfile.org/photoswipe/4.1.3/default-skin/default-skin.min.css">
+<script src="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe.min.js"></script>
+<script src="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script> 
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+ 
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+ 
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+ 
+<link rel="stylesheet" href="/css/clipboard.css">
+ <script src="https://cdn.staticfile.org/clipboard.js/2.0.10/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+ 
+<!-- CanvasBackground -->
+
+<script>
+  if (window.mermaid) {
+    mermaid.initialize({ theme: "forest" });
+  }
+</script>
+
+
+    
+    
+
+  </div>
+</body>
+
 </html>
